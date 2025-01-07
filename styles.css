@@ -1,0 +1,729 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8f8f8f;
+    
+  }
+  .header .menu-list li a {
+   
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .header .menu-list li a:hover {
+    color: #ffa500;
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 10%;
+  }
+  
+  #home, #menu, #about, #gallery, #contact {
+    margin-right: 20px;
+    font-size: 20px;
+  }
+  
+  #reservation {
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  #reservation a{
+    text-decoration: none;
+    
+  }
+  
+  .head-pictures {
+    width: 100%;
+    display: flex;
+    position: relative; /* Allows positioning of the text and overlay */
+  }
+  /* Style for both buttons in the booking section */
+.booking a {
+  display: inline-block;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 10px; /* Space between buttons */
+  width: 30%; /* Ensure consistent sizing */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.booking a:hover {
+  background-color: white;
+  color: red;
+}
+
+/* Ensure alignment and spacing of booking buttons */
+.booking {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10%;
+}
+
+  
+  #img1, #img2, #img3 {
+    width: 33.33%;
+    height: 800px;
+    object-fit: cover;
+    filter: brightness(0.5); /* Makes the images appear lighter */
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    
+    padding: 20px 40px;
+    border-radius: 10px;
+  }
+  
+  /* Optional: Add a gradient overlay to make the images even softer */
+  .head-pictures::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.223); 
+    z-index: 1;
+  }
+  
+  .overlay-text {
+    z-index: 2; /* Ensures the text is above the gradient overlay */
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .heading{
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .booking{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10%;
+  }
+  #book{
+    border: 2px solid red;
+    background-color: red;
+    padding: 10px;
+    width: 30%;
+  }
+  #menu-view{
+    border: 2px solid red;
+    padding: 10px;
+    width: 30%;
+  }
+  .carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+    text-align: center;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  button.prev,
+  button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+ /* Layer Section Container */
+.layer-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background-color: #f3f3f3;
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.image-container img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* Overlay Text Container */
+.image-container .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  padding: 20px;
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Heading Displayed Initially */
+.image-container .text h4 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffd700; /* Vibrant yellow */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0;
+}
+
+/* Description Hidden Initially */
+.image-container .text h5 {
+  display: none;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+  line-height: 1.5;
+  font-style: italic;
+  opacity: 0;
+}
+
+/* Hover Effects */
+.image-container:hover .text h4 {
+  display: none;
+}
+
+.image-container:hover .text h5 {
+  display: block;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation for Description */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Main Page Section */
+.main-page {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #fff, #f9f9f9);
+  opacity: 0; /* Initially hidden for animation */
+  transform: translateY(50px); /* Initially offset for animation */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.main-page.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset position when visible */
+}
+
+/* Welcome Heading */
+.main-page h2 {
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 4px solid #e63946;
+  display: inline-block;
+  padding-bottom: 10px;
+  animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Content Styling */
+.main-page .content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin: 20px 0 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f8f8f8;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image Section */
+.image-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.image-section img {
+  width: 60%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.9) translateY(30px);
+  animation: fadeInZoom 1.5s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* Footer styling */
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-list a:hover {
+  text-decoration: underline;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+  filter: grayscale(0%);
+}
+.footer-menu-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  background-color: #333;
+  margin: 0;
+}
+
+.footer-menu-list li {
+  margin: 0 15px;
+}
+
+.footer-menu-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+  background-color: #333;
+  padding: 10px 0;
+  margin: 0;
+}
+/* About Us Section */
+#partions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us {
+  flex: 1 1 45%;
+  max-width: 600px;
+  text-align: center;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.about-us h3 {
+  font-size: 36px;
+  color: #e63946;
+  margin-bottom: 15px;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.about-us h4 {
+  font-size: 28px;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.about-us h5 {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Adding specific delays to each h5 */
+.about-us h5:nth-of-type(1) {
+  animation-delay: 1s;
+}
+
+.about-us h5:nth-of-type(2) {
+  animation-delay: 1.5s;
+}
+
+.about-us h5:nth-of-type(3) {
+  animation-delay: 2s;
+}
+
+/* Updated styles for the reservation link */
+.about-us a#reservation-link {
+  display: inline-block;
+  background-color: #e63946;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 2.5s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-us a#reservation-link:hover {
+  background-color: #c92d3b;
+  transform: scale(1.1);
+}
+
+/* Chef Image Styling */
+.imageChef {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 1s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+.imageChef img {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageChef img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.about-us a#reservation-link {
+  display: inline-block;
+  background-color: #e63946;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 2.5s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-us a#reservation-link:hover {
+  background-color: #c92d3b;
+  transform: scale(1.1);
+}
+/* Today's Special Section Styling */
+.special-section {
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 40px 20px;
+}
+
+.special-heading {
+  font-size: 36px;
+  color: #e63946;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.special-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Special Items Grid */
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Special Card Container */
+.special-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 1s ease-in-out;
+  height: 300px; /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.special-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.special-card-img {
+  width: 100%; /* Take full width of the container */
+  height: 200px; /* Fixed height for the image */
+  object-fit: contain; /* Ensure the full image is visible without cropping */
+  background-color: #f5f5f5; /* Optional background for better appearance */
+}
+
+/* Content Section */
+.special-card-content {
+  padding: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd; /* Subtle border for separation */
+}
+
+.special-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.special-card-price {
+  font-size: 18px;
+  color: #e63946;
+  font-weight: bold;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer Styles (Same as first page) */
+.footer-menu-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  background-color: #333;
+  margin: 0;
+}
+
+.footer-menu-list li {
+  margin: 0 15px;
+}
+
+.footer-menu-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+  background-color: #333;
+  padding: 10px 0;
+  margin: 0;
+}
